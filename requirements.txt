@@ -1,1 +1,3 @@
 numpy
+nltk
+rouge-score
