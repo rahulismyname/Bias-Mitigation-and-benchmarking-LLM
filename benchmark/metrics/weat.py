@@ -18,12 +18,6 @@ def detect_bias(sentence):
     label = result['labels'][0]
     return label
 
-def detect_bias(sentence):
-    # Use zero-shot classification to check if the sentence is biased or unbiased
-    result = classifier(sentence, candidate_labels=labels)
-    label = result['labels'][0]
-    return label
-
 def weat_score(target_words, attribute_words_1, attribute_words_2):
     # Calculate the cosine similarity for the word sets
     similarities_1 = []
