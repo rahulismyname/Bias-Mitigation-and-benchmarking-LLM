@@ -2,3 +2,5 @@ numpy
 nltk
 rouge-score
 scikit-learn
+datasets
+python-dotenv
