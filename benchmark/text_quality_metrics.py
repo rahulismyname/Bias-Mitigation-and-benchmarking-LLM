@@ -43,9 +43,6 @@ def evaluate_text_quality():
 
     # Calculate ROUGE scores
     rouge_scores = calculate_rouge(reference, candidate)
-    # rouge1_quality = interpret_quality(rouge_scores['rouge1'].fmeasure)
-    # rouge2_quality = interpret_quality(rouge_scores['rouge2'].fmeasure)
-    # rougeL_quality = interpret_quality(rouge_scores['rougeL'].fmeasure)
 
     print("ROUGE Scores:")
     print(f"ROUGE-1: F1 Score: {rouge_scores['rouge1'].fmeasure:.4f} ")
