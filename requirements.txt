@@ -4,3 +4,6 @@ rouge-score
 scikit-learn
 datasets
 python-dotenv
+gensim
+spacy
+pandas
