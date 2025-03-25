@@ -21,8 +21,8 @@ This repository focuses on neutralizing bias in large language models (LLMs) and
 
 Bias in LLMs can lead to unfair or harmful outputs. This project aims to:
 1. Fine-tune LLMs to reduce bias.
-2. Evaluate the effectiveness of debiasing using metrics like WEAT, BLEU, ROUGE, and cosine similarity.
-3. Provide tools for benchmarking text quality and bias mitigation.
+2. Evaluate the effectiveness of neutralizing using metrics like WEAT, BLEU, ROUGE, and cosine similarity.
+3. Provide tools for benchmarking text quality and bias reduction.
 
 ---
 
