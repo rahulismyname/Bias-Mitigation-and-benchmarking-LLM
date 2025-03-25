@@ -55,7 +55,7 @@ Bias in LLMs can lead to unfair or harmful outputs. This project aims to:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/Bias-Mitigation-and-benchmarking-LLM.git
+   git clone https://github.com/rahulismyname/Bias-Mitigation-and-benchmarking-LLM.git
    cd Bias-Mitigation-and-benchmarking-LLM
    ```
 
@@ -127,15 +127,6 @@ The repository includes the following metrics for benchmarking:
 3. **Text Quality Metrics**:
    - BLEU and ROUGE scores for evaluating text quality.
    - Implemented in [`benchmark/text_quality_metrics.py`](benchmark/text_quality_metrics.py).
-
----
-
-## Requirements
-
-The project requires the following Python packages install them using:
-```bash
-pip install -r requirements.txt
-```
 
 ---
 
