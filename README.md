@@ -14,7 +14,6 @@ This repository focuses on neutralizing bias in large language models (LLMs) and
   - [Fine-Tuning Models](#fine-tuning-models)
   - [Running Benchmarks](#running-benchmarks)
 - [Metrics and Evaluation](#metrics-and-evaluation)
-- [Requirements](#requirements)
 
 ---
 
