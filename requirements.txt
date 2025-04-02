@@ -7,3 +7,4 @@ python-dotenv
 gensim
 spacy
 pandas
+seaborn
