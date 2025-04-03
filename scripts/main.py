@@ -2,6 +2,7 @@ from pydantic import BaseModel, validator
 from peft import PeftModel, PeftConfig
 from transformers import T5ForConditionalGeneration, AutoTokenizer
 import matplotlib.pyplot as plt
+import seaborn as sns
 import ntpath
 import sys
 sys.path.append('./')
@@ -29,29 +30,14 @@ def write_to_excel(data, excel_name):
     with pd.ExcelWriter(f"{excel_name}.xlsx") as writer:
         df.to_excel(writer,index=False, sheet_name="Sheet 1")
 
-def output_chart(avgbias, avgneutral, filename):
+def output_chart(data, filename):
     # Data for the bar graph
-    categories = ["bias", "neutral" ]
-    weat_scores = [avgbias, avgneutral]  # Y-axis values
-    colors = ["orange", "lightblue" ]  # Colors for bars
-
-    # Create the bar plot
+    df = pd.DataFrame(data)[["BIASED WEAT SCORE", "NEUTRAL WEAT SCORE"]]
     plt.figure(figsize=(8, 4))  # Set figure size
-    bars = plt.bar(categories, weat_scores, color=colors)  # Create bars with colors
-    plt.xticks([])
-
+    sns.boxplot(data=df, width=0.5)
+    
     # Add labels and title
     plt.ylabel("WEAT Score")
-    plt.title("Avg. of Neutral and Bias WEAT Scores")
-
-    # Add values on top of bars
-    for bar in bars:
-        height = bar.get_height()
-        plt.text(bar.get_x() + bar.get_width() / 2, height, f"{height:.7f}", 
-                ha='center', va='bottom' if height < 0 else 'top', fontsize=10, color='black')
-
-    # Add legend
-    plt.legend(bars, ["Avg Bias Score", "Avg Neutral Score"], loc="best")
 
     # Save the plot as PNG
     plt.savefig(f"./{filename}.png", dpi=300)
@@ -105,8 +91,6 @@ final_output_data['BLEU SCORE'] = bleu_scores
 final_output_data['ROUGE'] = rouge_scores
 final_output_data['COSINE SIMILARITY'] = cosine_similarity
 
-weat_bias_avg = sum(weat_score_source) / len(weat_score_source)
-weat_neutral_avg = sum(weat_score_target) / len(weat_score_target)
 datasetname = ntpath.basename(DATASET_RELATIVE_PATH).split('.')[0]
 write_to_excel(final_output_data,datasetname)
-output_chart(weat_bias_avg, weat_neutral_avg,datasetname)
+output_chart(final_output_data,datasetname)
